@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  name: devfile-sample-inhv
+  namespace: pdave-tenant
+spec:
+  replicas: 1
+  selector: {}
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+    spec:
+      containers:
+      - image: quay.io/redhat-appstudio/user-workload@sha256:e8d254f81a34893787d0a7f98f15f964ba45473bd93fa646b440462c07a9d89d
+        name: container-image
+        resources: {}
+status: {}
