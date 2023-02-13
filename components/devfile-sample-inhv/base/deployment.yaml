@@ -23,7 +23,7 @@ spec:
         app.kubernetes.io/instance: devfile-sample-inhv
     spec:
       containers:
-      - image: quay.io/redhat-appstudio/user-workload@sha256:e8d254f81a34893787d0a7f98f15f964ba45473bd93fa646b440462c07a9d89d
+      - image: quay.io/redhat-appstudio/user-workload@sha256:a68f85725e16ee071c469652e99b5d539ece405cbf74a4043390d6996365a865
         imagePullPolicy: Always
         livenessProbe:
           httpGet:
@@ -40,6 +40,9 @@ spec:
           tcpSocket:
             port: 3001
         resources:
+          limits:
+            cpu: "1"
+            memory: 512Mi
           requests:
             cpu: 10m
             memory: 50Mi
